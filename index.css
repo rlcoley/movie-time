@@ -1,0 +1,61 @@
+body{
+  background-color: grey;
+  
+}
+
+.searchMovie{
+  text-align: center;
+  padding: 2em;
+}
+
+.movieSearch{
+  /* height: 27em; */
+  width: 21%;
+  /* border: 2px solid pink; */
+  margin: 4em;
+  /* display: inline-block; */
+}
+
+.detailsLink:hover{
+  color:red;
+  cursor: pointer;
+
+}
+
+.modal{
+  margin-top: 10%;
+  margin-left: 35%;
+  width: 400px;
+  height: 400px;
+  background-color: green;
+  position: relative;
+}
+
+.close{
+  color: black;
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  /* position: absolute; */
+  right: 0px;
+  background-color: white;
+  border: 2px solid white;
+  padding: 10px;
+}
+
+.movieWrapper{
+  border: 2px solid red;
+  height: 3em;
+
+}
+
+.movieImg {
+  border: 2px solid yellow;
+  height: 10em;
+}
+
+
+.movieDetails{
+  border: 2px solid green;
+  /* height: .5em; */
+}
