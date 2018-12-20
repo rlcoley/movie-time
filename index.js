@@ -17,15 +17,14 @@ submit.addEventListener('click', function() {
       //   console.log('naw');
       // }
     var allTheMovies = response.Search
-    // console.log(a);
+    wrapper.style.backgroundColor = 'rgba(76, 175, 80, 0.3)'
+    // wrapper.borderRadius
+    console.log(allTheMovies);
 
     for (var i = 0; i < allTheMovies.length; i++) {
       let movieTitle  = allTheMovies[i].Title;
       let moviePoster =  allTheMovies[i].Poster;
       let movieID = allTheMovies[i].imdbID
-      // if (moviePoster == 'N/A') {
-      //   console.log('No Pic');
-      // }
       // console.log(movieTitle);
       // console.log(moviePoster);
       // console.log(movieID);
@@ -37,12 +36,13 @@ submit.addEventListener('click', function() {
       // wrapper.appendChild(movieSearch)
 
       var img = document.createElement('img')
+      img.className = "images_for_search"
       img.src = moviePoster
       // img.style.border = "2px solid red"
       if (moviePoster == 'N/A') {
         img.src = "https://target.scene7.com/is/image/Target/GUEST_2233bb5e-de0e-4669-a05e-455421d9ac47?wid=488&hei=488&fmt=pjpeg"
-        img.style.height = "25em"
-        img.style.width =  "19em"
+        img.style.height = "200px"
+        img.style.width =  "150px"
       }
       movieSearch.appendChild(img)
 
@@ -77,22 +77,17 @@ submit.addEventListener('click', function() {
         var selectedMovieRating = selectedMovie.imdbRating
         var selectedMovieRated = selectedMovie.Rated
         var selectedMovieYear = selectedMovie.Year
-        // console.log(selectedMovieTitle);
-        // console.log(selectedMoviePoster);
-        // console.log(selectedMovieActors);
-        // console.log(selectedMoviePlot);
-        // console.log(selectedMovieRating);
+
         var mod = document.createElement('div');
         mod.className = "modal"
 
+        var invisible = document.createElement('div')
+        invisible.className = 'invisible'
+
         var close = document.createElement("div");
-        close.innerHTML = "X"
+        // close.innerHTML = "X"
         close.className = 'close'
 
-        close.addEventListener('click', byeBye)
-        function byeBye() {
-          mod.style.display = "none";
-        }
 
         var movieWrapper = document.createElement('div')
         movieWrapper.className = 'movieWrapper'
@@ -102,7 +97,7 @@ submit.addEventListener('click', function() {
         movieImg.src = selectedMoviePoster
         if (selectedMoviePoster == 'N/A') {
           movieImg.src = "https://target.scene7.com/is/image/Target/GUEST_2233bb5e-de0e-4669-a05e-455421d9ac47?wid=488&hei=488&fmt=pjpeg"
-          // movieImg.style.height = "25em"
+          // movieImg.style.height = "50em"
           // movieImg.style.width =  "19em"
         }
         movieImg.className = "movieImg"
@@ -110,18 +105,25 @@ submit.addEventListener('click', function() {
         var movieDetails = document.createElement('div')
         movieDetails.className = "movieDetails"
 
-        var theTitle = document.createElement('div')
-        var theActors = document.createElement('div')
-        var thePlot = document.createElement('div')
-        var theRating = document.createElement('div')
-        var theRated = document.createElement('div')
-        var theYear = document.createElement('div')
+        var theTitle = document.createElement('h1')
+        // theTitle.className = "theTitle"
+
+        var theActors = document.createElement('p')
+        var thePlot = document.createElement('h3')
+        var theRating = document.createElement('p')
+        var theRated = document.createElement('p')
+        var theYear = document.createElement('p')
 
         theTitle.innerHTML = selectedMovieTitle
         thePlot.innerHTML = selectedMoviePlot
         theActors.innerHTML = selectedMovieActors
         theRating.innerHTML = selectedMovieRating
-        theRated.innerHTML = selectedMovieRated
+        if (selectedMovieRated == "N/A") {
+          theRated.innerHTML= "This film is not yet rated"
+        }else {
+          theRated.innerHTML = selectedMovieRated
+        }
+
         theYear.innerHTML = selectedMovieYear
 
         movieDetails.appendChild(theTitle)
@@ -133,10 +135,21 @@ submit.addEventListener('click', function() {
 
         movieWrapper.appendChild(movieImg)
         movieWrapper.appendChild(movieDetails)
+
         mod.appendChild(close)
         mod.appendChild(movieWrapper)
 
-        movieSearch.appendChild(mod)
+        wrapper.appendChild(invisible)
+        invisible.appendChild(mod)
+
+        close.addEventListener('click',function () {
+          mod.style.display = "none";
+          invisible.style.display = "none"
+        })
+
+        invisible.addEventListener('click', function() {
+          invisible.style.display = "none"
+        })
       }
 
       movieSearch.appendChild(details)

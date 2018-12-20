@@ -1,61 +1,135 @@
 body{
-  background-color: grey;
-  
+  /* background-color: grey; */
+  /* background-image: url("http://static.wixstatic.com/media/e7708b_4bcafbacfb2a4163ad52a56242636673.jpg"); */
+  background-image: url("https://bloximages.newyork1.vip.townnews.com/telegraphherald.com/content/tncms/assets/v3/editorial/4/d6/4d6dcfab-2a19-55cc-8320-ee7d19e17396/5ac18873530e5.image.jpg?resize=1200%2C774");
+  /* background-position: center; */
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Staatliches', cursive;
+
 }
+
+.theTitle{
+  color: grey;
+}
+
+#search{
+  width: 30em;
+  height: 2em;
+  font-size: 1em;
+  margin-bottom: 1.5%;
+}
+
+#submit{
+  height: 3em;
+  border-radius: 10px;
+}
+
+
+.wrapper{
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  position: relative;
+  border-radius: 20px;
+  /* background-color: light; */
+  /* grid-gap: -10px; */
+}
+
+/* .wrapper::after{
+  position: absolute;
+  opacity: 0.5
+} */
 
 .searchMovie{
   text-align: center;
-  padding: 2em;
+  /* padding: 2em; */
 }
 
 .movieSearch{
   /* height: 27em; */
-  width: 21%;
+  /* width: 21%; */
   /* border: 2px solid pink; */
-  margin: 4em;
+  margin: 3em;
+  font-size: 17.5px;
+  /* color: grey */
   /* display: inline-block; */
+  /* background-color: grey; */
 }
+
+.images_for_search {
+  max-height: 220px;
+  max-width: 150px;
+  /* border: 2px solid pink */
+}
+
+/*
+.wrapper img{
+  max-height: 220px;
+  max-width: 150px;
+} */
 
 .detailsLink:hover{
   color:red;
   cursor: pointer;
-
 }
 
 .modal{
+  /* display: grid; */
   margin-top: 10%;
-  margin-left: 35%;
-  width: 400px;
+  margin-left: 20%;
+  width: 50em;
   height: 400px;
-  background-color: green;
-  position: relative;
+  background-color: #A9A9A9;
+  /* color: white; */
+  position: absolute;
+  border-radius: 15px;
+  /* top: 500px; */
 }
 
-.close{
+/* .close{
   color: black;
   text-align: center;
   width: 10px;
   height: 10px;
-  /* position: absolute; */
+  position: absolute;
   right: 0px;
   background-color: white;
   border: 2px solid white;
   padding: 10px;
-}
+} */
 
 .movieWrapper{
-  border: 2px solid red;
-  height: 3em;
-
-}
-
-.movieImg {
-  border: 2px solid yellow;
-  height: 10em;
+  grid-template-columns: .5fr .5fr;
+  display: grid;
+  padding: 2%;
+  /* border: 2px solid red; */
+  /* margin-top: 2em; */
+  /* height: 3em; */
 }
 
 
 .movieDetails{
-  border: 2px solid green;
+  /* border: 2px solid orange; */
   /* height: .5em; */
+  border-left: 2px solid black;
+  padding-left: 10%;
+}
+
+
+.movieImg{
+  max-height: 22em;
+  margin: 0 auto;
+}
+
+
+.invisible{
+  position: absolute;
+  /* border: 2px solid ; */
+  background-color: rgba(155, 0, 0, 0.8);
+  height: 48.2em;
+  width: 89em;
+
+  border-radius: 20px;
+
 }
