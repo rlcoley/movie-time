@@ -85,7 +85,7 @@ submit.addEventListener('click', function() {
         invisible.className = 'invisible'
 
         var close = document.createElement("div");
-        // close.innerHTML = "X"
+        close.innerHTML = "X"
         close.className = 'close'
 
 
@@ -140,7 +140,8 @@ submit.addEventListener('click', function() {
         mod.appendChild(movieWrapper)
 
         wrapper.appendChild(invisible)
-        invisible.appendChild(mod)
+        wrapper.appendChild(mod)
+        // invisible.appendChild(mod)
 
         close.addEventListener('click',function () {
           mod.style.display = "none";
@@ -149,6 +150,7 @@ submit.addEventListener('click', function() {
 
         invisible.addEventListener('click', function() {
           invisible.style.display = "none"
+          mod.style.display = "none";
         })
       }
 
